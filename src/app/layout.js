@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <div className="bg-[#e2b808] flex items-center justify-center h-12">
-            <h3 className="text-black font-bold text-md sm:text-lg"> CASH ON DELIVERY ACCEPTED  NATIONWIDE 🚚</h3>
+            <h3 className="text-black font-bold text-sm sm:text-lg"> CASH ON DELIVERY ACCEPTED  NATIONWIDE 🚚</h3>
         </div>
         <Header />
         {children}
