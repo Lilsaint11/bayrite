@@ -25,7 +25,7 @@ const Header = () => {
 
    useEffect(()=>{
     if(typeof localStorage !== "undefined") {
-        const storedArray = JSON.parse(localStorage.getItem('bayriteCart'));
+        const storedArray = JSON.parse(localStorage.getItem('bayriteCart')) || [];
         setCartCount(storedArray.length)
     }
    },[num])
