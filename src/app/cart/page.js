@@ -15,11 +15,11 @@ const Cart = () => {
     const [sumTotal,setSumTotal] =  useState(0)
     const getCart = () => {
         if(typeof localStorage !== "undefined") {
-             setCart(JSON.parse(localStorage.getItem('bayriteCart'))) || []
+             setCart(JSON.parse(localStorage.getItem('bayriteCart'))) || setCart([])
         }
         return;
     }
-    useEffect(()=>{
+    useEffect(()=>{ 
         let cartTotal = 0
         if(typeof localStorage !== "undefined") {
             cartTotal = (JSON.parse(localStorage.getItem('bayriteCartTotal'))) || 0
@@ -73,7 +73,7 @@ const Cart = () => {
     
     function deleteCart(itemToDelete){
         let newArray
-        const storedArray = JSON.parse(localStorage.getItem('bayriteCart'));
+        const storedArray = JSON.parse(localStorage.getItem('bayriteCart')) || [];
         storedArray.map((item) => {
             newArray = storedArray.filter((item) => item[0].name !== itemToDelete);
         })

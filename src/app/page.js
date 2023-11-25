@@ -116,36 +116,36 @@ export default function Home() {
                             <div className='relative h-48 w-48 bg-slate-200 '>
                             </div>
                         </div>
-                        <h3 className='relative h-5 w-28 ml-5 bg-slate-200'></h3>
-                        <h4 className='relative h-5 w-36 ml-5 bg-slate-200'></h4>
-                        <div className="relative h-5 w-32 ml-5 bg-slate-200"></div>
+                        <h3 className='relative h-5 w-28 min-[600px]:ml-5 bg-slate-200'></h3>
+                        <h4 className='relative h-5 w-36 min-[600px]:ml-5 bg-slate-200'></h4>
+                        <div className="relative h-5 w-32 min-[600px]:ml-5 bg-slate-200"></div>
                     </div>
                     <div className='bg-white shadow shadow-lg p-5 border border-slate-200 cursor-pointer sm:h-[340px] min-[1000px]:hover:h-[400px]  max-[380px]:p-2 max-[380px]:h-[245px] flex flex-col gap-3 animate-pulse'>
                         <div className='flex items-center justify-center'>
                             <div className='relative h-48 w-48 bg-slate-200 '>
                             </div>
                         </div>
-                        <h3 className='relative h-5 w-28 ml-5 bg-slate-200'></h3>
-                        <h4 className='relative h-5 w-36 ml-5 bg-slate-200'></h4>
-                        <div className="relative h-5 w-32 ml-5 bg-slate-200"></div>
+                        <h3 className='relative h-5 w-28 min-[600px]:ml-5 bg-slate-200'></h3>
+                        <h4 className='relative h-5 w-36 min-[600px]:ml-5 bg-slate-200'></h4>
+                        <div className="relative h-5 w-32 min-[600px]:ml-5 bg-slate-200"></div>
                     </div>
                     <div className='bg-white shadow shadow-lg p-5 border border-slate-200 cursor-pointer sm:h-[340px] min-[1000px]:hover:h-[400px]  max-[380px]:p-2 max-[380px]:h-[245px] flex flex-col gap-3 animate-pulse'>
                         <div className='flex items-center justify-center'>
                             <div className='relative h-48 w-48 bg-slate-200 '>
                             </div>
                         </div>
-                        <h3 className='relative h-5 w-28 ml-5 bg-slate-200'></h3>
-                        <h4 className='relative h-5 w-36 ml-5 bg-slate-200'></h4>
-                        <div className="relative h-5 w-32 ml-5 bg-slate-200"></div>
+                        <h3 className='relative h-5 w-28 min-[600px]:ml-5 bg-slate-200'></h3>
+                        <h4 className='relative h-5 w-36 min-[600px]:ml-5 bg-slate-200'></h4>
+                        <div className="relative h-5 w-32 min-[600px]:ml-5 bg-slate-200"></div>
                     </div>
                     <div className='bg-white shadow shadow-lg p-5 border border-slate-200 cursor-pointer sm:h-[340px] min-[1000px]:hover:h-[400px]  max-[380px]:p-2 max-[380px]:h-[245px] flex flex-col gap-3 animate-pulse'>
                         <div className='flex items-center justify-center'>
                             <div className='relative h-48 w-48 bg-slate-200 '>
                             </div>
                         </div>
-                        <h3 className='relative h-5 w-28 ml-5 bg-slate-200'></h3>
-                        <h4 className='relative h-5 w-36 ml-5 bg-slate-200'></h4>
-                        <div className="relative h-5 w-32 ml-5 bg-slate-200"></div>
+                        <h3 className='relative h-5 w-28 min-[600px]:ml-5 bg-slate-200'></h3>
+                        <h4 className='relative h-5 w-36 min-[600px]:ml-5 bg-slate-200'></h4>
+                        <div className="relative h-5 w-32 min-[600px]:ml-5 bg-slate-200"></div>
                     </div>
                 </div>
             }
@@ -182,7 +182,7 @@ export default function Home() {
               <div>
                 {zodiacs.map(zodiac => (
                   <SwiperSlide>
-                    <div className='bg-white shadow shadow-lg p-5 border border-slate-200 cursor-pointer sm:h-[340px] min-[1000px]:hover:h-[400px] overflow-hidden  max-[380px]:p-2 max-[380px]:h-[245px]'>
+                    <div className='bg-white shadow shadow-lg p-5 border border-slate-200 cursor-pointer sm:h-[340px] min-[1000px]:hover:h-[400px] overflow-hidden  max-[380px]:p-2 max-[450px]:h-[285px]'>
                     <Link href={"/products/" + zodiac.slug.current} >
                       <div className='flex items-center justify-center'>
                         <div className='max-[1000px]:w-52 '>
@@ -191,7 +191,7 @@ export default function Home() {
                       </div>
                       <h3 className='text-[24px] max-[730px]:text-[18px] text-[#e2b808] text-left flex items-center'><TbCurrencyNaira />{addCommasToNumberString(zodiac.price)}.00</h3>
                       <h4 className='text-[15px] max-[730px]:text-[12px] text-left hover:text-[#e2b808]'>{zodiac.name}</h4>
-                      <div className='flex items-center gap-1 mt-2'>
+                      <div className='flex  max-[430px]:flex-col min-[430px]:items-center gap-1 mt-2'>
                         <Rating name="read-only" value={zodiac.reviews}  size="small" readOnly />
                         <p className='text-[12px] text-left' onClick={openproductModal}>{zodiac.reviews} reviews</p>
                       </div>
@@ -231,43 +231,43 @@ export default function Home() {
       <div className='flex flex-col justify-center gap-8 mt-16'>
         <h3 className='text-[24px]  w-full flex justify-center'>Gemstone Choker</h3>
         <div className='mx-20 max-lg:mx-3'>
-        {loading && 
+            {loading && 
                 <div className='grid grid-cols-4 max-sm:grid-cols-2 gap-5'>
                     <div className='bg-white shadow shadow-lg p-5 border border-slate-200 cursor-pointer sm:h-[340px] min-[1000px]:hover:h-[400px]  max-[380px]:p-2 max-[380px]:h-[245px] flex flex-col gap-3 animate-pulse'>
                         <div className='flex items-center justify-center'>
                             <div className='relative h-48 w-48 bg-slate-200 '>
                             </div>
                         </div>
-                        <h3 className='relative h-5 w-28 ml-5 bg-slate-200'></h3>
-                        <h4 className='relative h-5 w-36 ml-5 bg-slate-200'></h4>
-                        <div className="relative h-5 w-32 ml-5 bg-slate-200"></div>
+                        <h3 className='relative h-5 w-28 min-[600px]:ml-5 bg-slate-200'></h3>
+                        <h4 className='relative h-5 w-36 min-[600px]:ml-5 bg-slate-200'></h4>
+                        <div className="relative h-5 w-32 min-[600px]:ml-5 bg-slate-200"></div>
                     </div>
                     <div className='bg-white shadow shadow-lg p-5 border border-slate-200 cursor-pointer sm:h-[340px] min-[1000px]:hover:h-[400px]  max-[380px]:p-2 max-[380px]:h-[245px] flex flex-col gap-3 animate-pulse'>
                         <div className='flex items-center justify-center'>
                             <div className='relative h-48 w-48 bg-slate-200 '>
                             </div>
                         </div>
-                        <h3 className='relative h-5 w-28 ml-5 bg-slate-200'></h3>
-                        <h4 className='relative h-5 w-36 ml-5 bg-slate-200'></h4>
-                        <div className="relative h-5 w-32 ml-5 bg-slate-200"></div>
+                        <h3 className='relative h-5 w-28 min-[600px]:ml-5 bg-slate-200'></h3>
+                        <h4 className='relative h-5 w-36 min-[600px]:ml-5 bg-slate-200'></h4>
+                        <div className="relative h-5 w-32 min-[600px]:ml-5 bg-slate-200"></div>
                     </div>
                     <div className='bg-white shadow shadow-lg p-5 border border-slate-200 cursor-pointer sm:h-[340px] min-[1000px]:hover:h-[400px]  max-[380px]:p-2 max-[380px]:h-[245px] flex flex-col gap-3 animate-pulse'>
                         <div className='flex items-center justify-center'>
                             <div className='relative h-48 w-48 bg-slate-200 '>
                             </div>
                         </div>
-                        <h3 className='relative h-5 w-28 ml-5 bg-slate-200'></h3>
-                        <h4 className='relative h-5 w-36 ml-5 bg-slate-200'></h4>
-                        <div className="relative h-5 w-32 ml-5 bg-slate-200"></div>
+                        <h3 className='relative h-5 w-28 min-[600px]:ml-5 bg-slate-200'></h3>
+                        <h4 className='relative h-5 w-36 min-[600px]:ml-5 bg-slate-200'></h4>
+                        <div className="relative h-5 w-32 min-[600px]:ml-5 bg-slate-200"></div>
                     </div>
                     <div className='bg-white shadow shadow-lg p-5 border border-slate-200 cursor-pointer sm:h-[340px] min-[1000px]:hover:h-[400px]  max-[380px]:p-2 max-[380px]:h-[245px] flex flex-col gap-3 animate-pulse'>
                         <div className='flex items-center justify-center'>
                             <div className='relative h-48 w-48 bg-slate-200 '>
                             </div>
                         </div>
-                        <h3 className='relative h-5 w-28 ml-5 bg-slate-200'></h3>
-                        <h4 className='relative h-5 w-36 ml-5 bg-slate-200'></h4>
-                        <div className="relative h-5 w-32 ml-5 bg-slate-200"></div>
+                        <h3 className='relative h-5 w-28 min-[600px]:ml-5 bg-slate-200'></h3>
+                        <h4 className='relative h-5 w-36 min-[600px]:ml-5 bg-slate-200'></h4>
+                        <div className="relative h-5 w-32 min-[600px]:ml-5 bg-slate-200"></div>
                     </div>
                 </div>
             }
@@ -304,7 +304,7 @@ export default function Home() {
               <div>
                 {gemstones.map(gemstone => (
                   <SwiperSlide>
-                    <div className='bg-white shadow shadow-lg p-5 border border-slate-200 cursor-pointer  sm:h-[340px] min-[1000px]:hover:h-[400px] overflow-hidden  max-[380px]:p-2 max-[380px]:h-[245px]'>
+                    <div className='bg-white shadow shadow-lg p-5 border border-slate-200 cursor-pointer  sm:h-[340px] min-[1000px]:hover:h-[400px] overflow-hidden  max-[380px]:p-2 max-[450px]:h-[285px]'>
                       <Link href={"/products/" + gemstone.slug.current} >
                         <div className='flex items-center justify-center'>
                           <div className='max-[1000px]:w-52 '>
@@ -313,7 +313,7 @@ export default function Home() {
                         </div>
                         <h3 className='text-[24px] max-[730px]:text-[18px] text-[#e2b808] text-left flex items-center'><TbCurrencyNaira />{addCommasToNumberString(gemstone.price)}.00</h3>
                         <h4 className='text-[15px] max-[730px]:text-[12px] text-left'>{gemstone.name}</h4>
-                        <div className='flex items-center gap-1 mt-2'>
+                        <div className='flex  max-[430px]:flex-col min-[430px]:items-center gap-1 mt-2'>
                           <Rating name="read-only" value={gemstone.reviews}  size="small" readOnly />
                           <p className='text-[12px] text-left' onClick={openproductModal}>{gemstone.reviews} reviews</p>
                         </div>
