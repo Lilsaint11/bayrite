@@ -10,6 +10,9 @@ import { RiWhatsappFill } from 'react-icons/ri';
 import { groq } from "next-sanity";
 import { useParams } from "next/navigation";
 import { client } from "@/app/utils/configSanity";
+import { useStore } from "@/app/store/zustand";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const ProductDetails = () => {
@@ -18,18 +21,29 @@ const ProductDetails = () => {
     const [gemstoneProduct, setGemstoneProduct] = useState([])
     const [imageSlide, setImageSlide] = useState(0)
     const [itemQuant, setItemQuant] = useState(1)
-
+    const num = useStore(state => state.num)
+    const setNum = useStore(state => state.setNum)
+    let totalCartPrice = 0
     function addToCart(){
         let cart = []
         if(typeof localStorage !== "undefined") {
             cart = (JSON.parse(localStorage.getItem('bayriteCart'))) || []
+            totalCartPrice = (JSON.parse(localStorage.getItem('bayriteCartTotal'))) || 0
         } 
         if(zodiacProduct.length > 0){
-         cart.push({...zodiacProduct, quantity: itemQuant})
+         let total =zodiacProduct[0].price * itemQuant
+         totalCartPrice += total
+         cart.push({...zodiacProduct, quantity: itemQuant, total: total})
+         setNum(total)
         }else if(gemstoneProduct.length > 0){
-            cart.push({...gemstoneProduct, quantity: itemQuant})
+            let total = gemstoneProduct[0].price * itemQuant
+            totalCartPrice += total
+            cart.push({...gemstoneProduct, quantity: itemQuant,total: total})
+            setNum(total)
         } 
         localStorage.setItem('bayriteCart', JSON.stringify(cart))
+        localStorage.setItem('bayriteCartTotal', JSON.stringify(totalCartPrice))
+        toast("Item added to cart")
     }
 
     function onChange(e){
@@ -207,6 +221,7 @@ const ProductDetails = () => {
                     ))}
                 </div>
             </div>
+            <ToastContainer />
         </div>
      );
 }

@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import { IoIosArrowForward } from 'react-icons/io';
 import { BiLogoFacebook,BiLogoInstagramAlt } from 'react-icons/bi';
 import { MdEmail } from 'react-icons/md';
 import { useState } from "react";

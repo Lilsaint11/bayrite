@@ -1,5 +1,6 @@
 "use client";
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { BsFillCartFill } from 'react-icons/bs';
 import { RxHamburgerMenu } from 'react-icons/rx';
@@ -15,10 +16,17 @@ const Header = () => {
     const searchbarState = useStore(state => state.searchbarState)
     const openSearchbar = useStore(state => state.openSearchbar)
     const signedIn = useStore(state => state.signedIn)
+    const num = useStore(state => state.num)
+    const [cartCount,setCartCount] = useState()
     async function signOut(){
         await supabase.auth.signOut();
         //router.refresh()
    }
+
+   useEffect(()=>{
+    const storedArray = JSON.parse(localStorage.getItem('bayriteCart'));
+    setCartCount(storedArray.length)
+   },[num])
     return ( 
         <div className='flex flex-col gap-7 bg-[#ddd] p-7 max-sm:p-3 sticky top-0 w-full z-10'>
              {sidebarState && <div className='w-screen h-screen absolute bg-[rgba(0,0,0,0.5)] flex -top-12 left-0 sm:hidden' onClick={closeSidebar}></div>}
@@ -38,8 +46,10 @@ const Header = () => {
                         </div>
                     </form>
                 </div>
-                <div className='ml-10'>
+                <div className='ml-10 relaive'>
                     <Link href="/cart"><BsFillCartFill className='text-2xl cursor-pointer '/></Link>
+                    {cartCount > 0 && 
+                    <p className='absolute right-5 top-7 max-sm:right-1 max-sm:top-3 bg-[#e2b808] rounded-full w-6 max-[730px]:w-5 max-[730px]:h-5 flex items-center justify-center min-[730px]:font-semibold cursor-pointer text-[14px]'>{cartCount}</p>}
                 </div>
             </div>
             <div className="flex justify-between max-sm:hidden">
