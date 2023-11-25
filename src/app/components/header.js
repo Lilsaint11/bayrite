@@ -24,8 +24,10 @@ const Header = () => {
    }
 
    useEffect(()=>{
-    const storedArray = JSON.parse(localStorage.getItem('bayriteCart'));
-    setCartCount(storedArray.length)
+    if(typeof localStorage !== "undefined") {
+        const storedArray = JSON.parse(localStorage.getItem('bayriteCart'));
+        setCartCount(storedArray.length)
+    }
    },[num])
     return ( 
         <div className='flex flex-col gap-7 bg-[#ddd] p-7 max-sm:p-3 sticky top-0 w-full z-10'>
