@@ -65,7 +65,7 @@ const ProductDetails = () => {
     const remarks = [
         {title:"Sleek", nameDate:"Ladidi Ahmed on Feb 12, 2023",desc:"This piece is sleek as it appears"},
         {title:"Strong", nameDate:"Yerinis Isa on Feb 12, 2023", desc:"This necklace doesn't fade"},
-        {title:"Best", nameDate:"Abdulwasiu Ayorinde on Feb 12, 2023", desc:"This is simply the best jewelsry case"},
+        {title:"Best", nameDate:"Abdulwasiu Ayorinde on Feb 12, 2023", desc:"This is simply the best jewelery case"},
         {title:"Refined", nameDate:"Yetunde Aiyeola on Feb 12, 2023", desc:"This is simply the best"},
         {title:"Sparkling", nameDate:"Hamida Noheem on Feb 12, 2023", desc:"This just sparkles my heart"},
     ]
