@@ -14,7 +14,7 @@ const Sidebar = () => {
     return ( 
         <div className={`flex flex-col gap-10 h-screen w-80 absolute -top-12 left-0 bg-white z-40 py-5 px-5 transition duration-400 sm:hidden ${sidebarState ? "translate-x-0" : "-translate-x-96"}`}>
             <div className='flex justify-between'>
-                <h4 className='text-[14px] text-[#4d4d4d]'>Login</h4>
+                <Link href="/login"><h4 className='text-[14px] text-[#4d4d4d]'>Login</h4></Link>
                 <AiOutlineClose className='text-[20px]' onClick={closeSidebar}/>
             </div>
             <div>
