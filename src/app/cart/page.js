@@ -15,7 +15,7 @@ const Cart = () => {
     const [sumTotal,setSumTotal] =  useState(0)
     const getCart = () => {
         if(typeof localStorage !== "undefined") {
-             setCart(JSON.parse(localStorage.getItem('bayriteCart'))) || setCart([])
+             setCart(JSON.parse(localStorage.getItem('bayriteCart'))) || []
         }
         return;
     }
