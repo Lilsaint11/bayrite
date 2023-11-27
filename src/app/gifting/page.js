@@ -151,7 +151,7 @@ const Gifting = () => {
                     </div>
                     <h3 className='text-[24px] max-[730px]:text-[18px] text-[#e2b808] text-left flex items-center'><TbCurrencyNaira />{addCommasToNumberString(gemstone.price)}.00</h3>
                     <h4 className='text-[15px] max-[730px]:text-[12px] text-left hover:text-[#e2b808]'>{gemstone.name}</h4>
-                    <div className="flex items-center gap-1 mt-2">
+                    <div className="flex  max-[430px]:flex-col min-[430px]:items-center gap-1 mt-2">
                         <Rating name="read-only" value={gemstone.reviews}  size="small" readOnly />
                         <p className='text-[12px] text-left' onClick={openproductModal}>{gemstone.reviews} reviews</p>
                     </div>
