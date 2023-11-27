@@ -2,9 +2,15 @@
 import Link from 'next/link';
 import { AiOutlineClose} from 'react-icons/ai';
 import { useStore } from '../store/zustand';
+import { usePathname } from 'next/navigation'
+import { useEffect } from 'react';
 const Sidebar = () => {
     const sidebarState = useStore(state => state.sidebarState)
     const closeSidebar = useStore(state => state.closeSidebar)
+    const pathname = usePathname()
+    useEffect(()=>{
+        closeSidebar();
+    },[pathname])
     return ( 
         <div className={`flex flex-col gap-10 h-screen w-80 absolute -top-12 left-0 bg-white z-40 py-5 px-5 transition duration-400 sm:hidden ${sidebarState ? "translate-x-0" : "-translate-x-96"}`}>
             <div className='flex justify-between'>

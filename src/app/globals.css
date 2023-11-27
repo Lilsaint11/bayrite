@@ -33,3 +33,9 @@
   height: 100%;
   object-fit: cover;
 }
+.swiper-button-next,
+.swiper-button-prev {
+  color: red;
+  font-size: 5px;
+  width: 5px;
+}

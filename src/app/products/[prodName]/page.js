@@ -83,10 +83,10 @@ const ProductDetails = () => {
                {gemstoneProduct.length > 0 && <h3 className="text-[#5c5c5c]">{gemstoneProduct[0].name}</h3>}
             </div>
             <div>
-                <div className="flex gap-5">
+                <div className="flex gap-5  max-sm:flex-col">
                     {gemstoneProduct.length > 0 &&
                         <div className="w-full flex flex-col gap-3">
-                            <img src={gemstoneProduct[0].bigImages[imageSlide]} alt="" className='object-contain w-[430px] h-[430px]'/>
+                            <img src={gemstoneProduct[0].bigImages[imageSlide]} alt="" className='object-contain w-[430px] h-[430px] max-sm:w-[350px]'/>
                             <div className="flex gap-2">
                                 {gemstoneProduct[0].images.map((img, index) => (
                                     <div key={index} onClick={()=>setImageSlide(index)} className={`${index == imageSlide && "border-2 border-[#e2b808]"} p-1 w-16 rounded-md`} >
@@ -112,24 +112,24 @@ const ProductDetails = () => {
                     <div className="w-full flex flex-col gap-2">
                         {gemstoneProduct.length > 0 &&
                             <div className=" flex flex-col gap-2">
-                                <h1 className="text-[24px] NorthernTerritories">{gemstoneProduct[0].name}</h1> 
+                                <h1 className="text-[24px]  max-sm:text-[18px] NorthernTerritories">{gemstoneProduct[0].name}</h1> 
                                 <div>
                                     <p className="text-[14px]">{gemstoneProduct[0].reviews} reviews</p>
                                 </div>
-                                <h3 className="text-[24px] text-[#333]">N{addCommasToNumberString(gemstoneProduct[0].price)}.00</h3>
+                                <h3 className="text-[24px]  max-sm:text-[18px] text-[#333]">N{addCommasToNumberString(gemstoneProduct[0].price)}.00</h3>
                             </div>
                         }
                         {zodiacProduct.length > 0 &&
                             <div className=" flex flex-col gap-2">
-                                <h1 className="text-[24px] NorthernTerritories">{zodiacProduct[0].name}</h1> 
+                                <h1 className="text-[24px]  max-sm:text-[18px] NorthernTerritories">{zodiacProduct[0].name}</h1> 
                                 <div>
                                     <p className="text-[14px]">{zodiacProduct[0].reviews} reviews</p>
                                 </div>
-                                <h3 className="text-[24px] text-[#333]">N{addCommasToNumberString(zodiacProduct[0].price)}.00</h3>
+                                <h3 className="text-[24px]  max-sm:text-[18px] text-[#333]">N{addCommasToNumberString(zodiacProduct[0].price)}.00</h3>
                             </div>
                         }
                         <div className="flex gap-3">
-                            <div className="w-32 border border-slate-400 shadow shadow-sm rounded-sm px-2 py-1 cursor-pointer">
+                            <div className="w-32 max-sm:w-28 border border-slate-400 shadow shadow-sm rounded-sm px-2 py-1 cursor-pointer">
                                 <p className="text-[13px] text-[#bbb]">Quantity</p>
                                 <select name="quantity" id="quantity" onChange={onChange} className="w-full">
                                     <option>1</option>
@@ -157,39 +157,42 @@ const ProductDetails = () => {
                         </div>
                         <div className="mt-5"> 
                             <div className="flex gap-2 border-b border-slate-200 mb-10">
-                                <h3 className="border border-slate-200 rounded-tl-md rounded-tr-md  p-2 text-[18px] font-bold cursor-pointer" onClick={()=>setDesc(true)}>Description</h3>
-                                <h3 className="border border-slate-200 rounded-tl-md rounded-tr-md p-2 text-[18px] cursor-pointer" onClick={()=>setDesc(false)}>Jewellery Warranty</h3>
+                                <h3 className="border border-slate-200 rounded-tl-md rounded-tr-md  p-2 text-[18px] max-sm:text-[12px] font-bold cursor-pointer" onClick={()=>setDesc(true)}>Description</h3>
+                                <h3 className="border border-slate-200 rounded-tl-md rounded-tr-md p-2 text-[18px] max-sm:text-[12px] cursor-pointer" onClick={()=>setDesc(false)}>Jewellery Warranty</h3>
                             </div>
                             {desc ? 
-                            <div className="flex flex-col gap-5">
-                                <h3 className="text-[20px] font-bold italic text-[#4d4d4d]">ABOUT THIS NECKLACE :</h3>
-                                <p className=" text-[18px] italic">Perfectly personal, perfectly giftable.</p>
-                                <p className=" text-[18px] italic">Our Zodiac identity necklaces make the perfect all-year-round present for loved ones, Mums, BFFs or yourself.</p>
-                                <p className=" text-[18px] italic">Truly refined and hand set with Vintage 18k Gold plated Horoscope link Chain.</p>
-                                <h3 className="text-[20px] font-bold text-[#4d4d4d]">GEMINI:</h3>
-                                <p className="text-[18px]">(May 21 - June 20)</p>
-                                <p className="text-[18px]">Geminis are a mix of light and darkness, and are perfectly represented by the Twins. You can see both sides of every issue and are highly intelligent. You have a rich imagination and are also quick witted.</p>
-                                <h3  className="text-[20px] font-bold italic text-[#4d4d4d]">DETAILS:</h3>
-                                <p className="text-[18px]">- Vintage 18k Gold plated Horoscope link Chain.</p>
-                                <p className="text-[18px]">- Chain Length: 16" with 2" extender</p>
-                                <p className="text-[18px]">- Mother Shell Round Zodiac Sign</p>
-                                <p className="text-[18px]">- Stainless Steel)</p>
-                                <h3  className="text-[20px] font-bold italic text-[#4d4d4d]">12 MONTHS, 12 ZODIACS. EASILY PICK THE RIGHT NECKLACE:</h3>
-                                <div className="flex flex-col gap-3">
-                                    <p className="text-[17px]">Aries: March 21 – April 19</p>
-                                    <p className="text-[17px]">Taurus: April 20 – May 20</p>
-                                    <p className="text-[17px]">Gemini: May 21 – June 20</p>
-                                    <p className="text-[17px]">Cancer: June 21 – July 22</p>
-                                    <p className="text-[17px]">Leo: July 23 – August 22</p>
-                                    <p className="text-[17px]">Virgo: August 23 – September 22</p>
-                                    <p className="text-[17px]">Libra: September 23 – October 22</p>
-                                    <p className="text-[17px]">Scorpio: October 23 – November 21</p>
-                                    <p className="text-[17px]">Sagittarius: November 22 – December 21</p>
-                                    <p className="text-[17px]">Capricorn: December 21 – January 19</p>
-                                    <p className="text-[17px]">Aquarius: January 20 – February 18</p>
-                                    <p className="text-[17px]">Pisces: February 19 – March 20</p>
-                                </div>
-                            </div> 
+                             <div className="flex flex-col gap-5">
+                             <h3 className="text-[20px] max-sm:text-[16px] font-bold italic text-[#4d4d4d]">ABOUT THIS NECKLACE :</h3>
+                             <p className=" text-[18px] max-sm:text-[14px]  italic">Perfectly personal, perfectly giftable.</p>
+                             <p className=" text-[18px] max-sm:text-[14px] italic">Our Zodiac identity necklaces make the perfect all-year-round present for loved ones, Mums, BFFs or yourself.</p>
+                             <p className=" text-[18px] max-sm:text-[14px] italic">Truly refined and hand set with Vintage 18k Gold plated Horoscope link Chain.</p>
+
+                             <h3 className="text-[20px] max-sm:text-[16px]  font-bold text-[#4d4d4d]">GEMINI:</h3>
+                             <p className="text-[18px] max-sm:text-[14px]">(May 21 - June 20)</p>
+                             <p className="text-[18px] max-sm:text-[14px]">Geminis are a mix of light and darkness, and are perfectly represented by the Twins. You can see both sides of every issue and are highly intelligent. You have a rich imagination and are also quick witted.</p>
+
+                             <h3  className="text-[20px] max-sm:text-[16px]  font-bold italic text-[#4d4d4d]">DETAILS:</h3>
+                             <p className="text-[18px] max-sm:text-[14px]">- Vintage 18k Gold plated Horoscope link Chain.</p>
+                             <p className="text-[18px] max-sm:text-[14px]">- Chain Length: 16" with 2" extender</p>
+                             <p className="text-[18px] max-sm:text-[14px]">- Mother Shell Round Zodiac Sign</p>
+                             <p className="text-[18px] max-sm:text-[14px]">- Stainless Steel)</p>
+
+                             <h3  className="text-[20px] max-sm:text-[16px]  font-bold italic text-[#4d4d4d]">12 MONTHS, 12 ZODIACS. EASILY PICK THE RIGHT NECKLACE:</h3>
+                             <div className="flex flex-col gap-3">
+                                 <p className="text-[17px] max-sm:text-[14px]">Aries: March 21 – April 19</p>
+                                 <p className="text-[17px] max-sm:text-[14px]">Taurus: April 20 – May 20</p>
+                                 <p className="text-[17px] max-sm:text-[14px]">Gemini: May 21 – June 20</p>
+                                 <p className="text-[17px] max-sm:text-[14px]">Cancer: June 21 – July 22</p>
+                                 <p className="text-[17px] max-sm:text-[14px]">Leo: July 23 – August 22</p>
+                                 <p className="text-[17px] max-sm:text-[14px]">Virgo: August 23 – September 22</p>
+                                 <p className="text-[17px] max-sm:text-[14px]">Libra: September 23 – October 22</p>
+                                 <p className="text-[17px] max-sm:text-[14px]">Scorpio: October 23 – November 21</p>
+                                 <p className="text-[17px] max-sm:text-[14px]">Sagittarius: November 22 – December 21</p>
+                                 <p className="text-[17px] max-sm:text-[14px]">Capricorn: December 21 – January 19</p>
+                                 <p className="text-[17px] max-sm:text-[14px]">Aquarius: January 20 – February 18</p>
+                                 <p className="text-[17px] max-sm:text-[14px]">Pisces: February 19 – March 20</p>
+                             </div>
+                         </div> 
                             : 
                             <div>
                                 <p>Introducing our new <strong>12-month warranty</strong> for all of our exquisite jewellery pieces! At Bayrite, we are committed to providing our customers with the highest quality products and exceptional customer service.</p>
@@ -210,7 +213,7 @@ const ProductDetails = () => {
                         <h4 className="border border-slate-400 px-4 py-2 rounded-sm cursor-pointer hover:text-[#e2b808] hover:border-[#e2b808]">Write a review</h4>
                     </div>
                 </div>
-                <div  className="border border-t-0 border-slate-400 shadow shadow-sm shadow-slate-300 px-5 py-8 grid grid-cols-2 gap-10">
+                <div  className="border border-t-0 border-slate-400 shadow shadow-sm shadow-slate-300 px-5 py-8 grid grid-cols-2 max-sm:grid-cols-1  gap-10">
                     {remarks.map(remark =>(
                         <div className="flex flex-col gap-2" key={remark.title}>
                             <h2 className="NorthernTerritories">{remark.title}</h2>
